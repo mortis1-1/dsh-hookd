@@ -1,0 +1,40 @@
+{
+  "name": "dsh-hookd",
+  "version": "0.1.0",
+  "description": "Audit every DSH tool call and gate destructive operations against a rules file: path deny/warn lists plus dangerous-command patterns.",
+  "license": "MIT",
+  "author": "SAKI",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "tests",
+    "cordis.patch.yml",
+    "dsh-plugin.json",
+    "icon.svg",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test tests/"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "hooks",
+    "audit",
+    "guard",
+    "safety"
+  ]
+}
