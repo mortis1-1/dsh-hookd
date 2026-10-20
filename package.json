@@ -36,5 +36,13 @@
     "audit",
     "guard",
     "safety"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mortis1-1/dsh-hookd.git"
+  },
+  "homepage": "https://github.com/mortis1-1/dsh-hookd#readme",
+  "bugs": {
+    "url": "https://github.com/mortis1-1/dsh-hookd/issues"
+  }
 }
