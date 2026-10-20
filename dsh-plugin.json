@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/T-Auto/dsh-std/8a15541117cb3c13ddb8f2468308691b6051d162/packages/manifest/schema/dsh-plugin-0.15.schema.json",
+  "manifestVersion": "0.15",
+  "id": "dsh-hookd.hooks",
+  "name": "dsh-hookd",
+  "version": "0.1.0",
+  "license": "MIT",
+  "facets": {
+    "host": {
+      "entry": "lib/index.js",
+      "apiVersion": "v1alpha1"
+    }
+  },
+  "permissions": [
+    {
+      "name": "dsh-hookd.audit.write",
+      "scope": "dsh-home",
+      "reason": "Append one JSONL audit record per tool call to $DSH_HOME/hookd/audit.jsonl (8 MB rotation) and seed $DSH_HOME/hookd/rules.json on first run."
+    },
+    {
+      "name": "dsh-hookd.rules.read",
+      "scope": "dsh-home",
+      "reason": "Re-read $DSH_HOME/hookd/rules.json on every check, so rule edits take effect without a restart."
+    }
+  ],
+  "contributes": {
+    "x-display": [
+      {
+        "icon": "./icon.svg",
+        "title": "dsh-hookd",
+        "description": "Audit tool calls and check paths/commands against $DSH_HOME/hookd/rules.json before destructive operations."
+      }
+    ]
+  }
+}
